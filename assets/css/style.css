@@ -1,0 +1,30 @@
+.movie,
+#select-movies {
+    background-color: green;
+    color: white;
+    margin: 2px;
+}
+
+#gifs-appear-here,
+p,
+html,
+body,
+.container,
+.row,
+label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+}
+
+.ContGif {
+    display: inline-block;
+    margin: 5px;
+}
+
+.gif {
+    float: left;
+    width: auto;
+    height: 200px;
+}

@@ -1,4 +1,4 @@
-var movies = ["Science-fiction", "Horror", "Action", "Fantasy", "Documentary", "Comedy", "Sport", "Anime", "Educational", "Matrix", "The Conjuring", "Titanic"];
+var movies = ["Science-fiction", "Horror", "Action", "Fantasy", "Documentary", "Comedy", "Sport", "Anime", "Romantic", "Matrix", "The Conjuring", "Titanic", "Big Bang Theory", "Batman", "Superman", "Limitless", "Taken", "Se7en", "The Skawshank Redemption", "Rocky"];
 
 function renderButtons() {
     $("#buttons-view").empty();
@@ -14,6 +14,7 @@ function renderButtons() {
 renderButtons();
 
 function submitButton() {
+    $("#gifs-appear-here").empty();
     var movie = $(this).attr("data-movies");
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=iFGpcsPo2GrEaaYwGdcvZVTa47JDHJY8&q=" +
         movie + "&limit=10&offset=0&rating=&lang=en";
@@ -26,7 +27,7 @@ function submitButton() {
         var results = response.data;
 
         for (var i = 0; i < 10; i++) {
-            var moviesDiv = $("<div>");
+            var moviesDiv = $('<div class="ContGif">');
             var p = $("<p>").text("Rating: " + results[i].rating);
             var moviesImage = $('<img class="gif">');
             moviesImage.attr("src", results[i].images.fixed_height_still.url);
